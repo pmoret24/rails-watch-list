@@ -1,0 +1,26 @@
+<style>
+  body {
+    background-image: url('<%= @movies.poster_url %>');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; /* This ensures the body takes up the full viewport height */
+    margin: 0; /* Reset default margin */
+    font-family: Arial, sans-serif; /* Example font */
+    color: white; /* Example text color, adjust as necessary */
+  }
+</style>  <h1><%= @movies.title %></h1>
+
+  <p>
+    Overview: <br>
+    <%= @movies.overview %>
+  </p>
+
+  <p>
+    Rating: <br>
+    <%= @movies.rating %>/10
+  </p>
+
+  <p>
+  <%= link_to 'Back to movies', movies_path %>
+  </p>
+</div>
