@@ -1,0 +1,11 @@
+<h1>Add a new bookmark to <%= @list.name %></h1>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.association :movie, label_method: :title, value_method: :id, include_blank: false %>
+  <%= f.input :comment %>
+  <%= f.button :submit, 'Add Bookmark' %>
+<% end %>
+
+<%= link_to 'Back', list_bookmarks_path(@list) %>
+
+<%# THIS ONE IS THE ONE THAT DOESNT WORK %>

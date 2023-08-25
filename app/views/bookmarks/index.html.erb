@@ -1,0 +1,26 @@
+<h1>Bookmarks for <%= @list.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Movie Title</th>
+      <th>Comment</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.movie.title %></td>
+        <td><%= bookmark.comment %></td>
+        <td>
+          <%= link_to 'Edit', edit_list_bookmark_path(@list, bookmark) %> |
+          <%= link_to 'Delete', list_bookmark_path(@list, bookmark), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back to Lists', lists_path %>
+<%= link_to 'Add a new Bookmark', new_list_bookmark_path(@list) %>
